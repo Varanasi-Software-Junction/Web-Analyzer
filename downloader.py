@@ -10,12 +10,12 @@ def downloadUrl(url):
     webContent = response.read()
     return webContent
 def SaveFile(filename,data):
-    file = open(filename,"w")
+    file = open(filename, "w")
     file.write(data)
     file.flush()
     file.close()
 def SaveBinaryFile(filename,data):
-    file=open(filename,"wb")
+    file=open(filename, "wb")
     file.write(data)
     file.flush()
     file.close()

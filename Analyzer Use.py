@@ -2,10 +2,15 @@ import downloader as dd
 import analyzer as an
 import tokenizer as tk
 import Training as t
+
 from flask import Flask,render_template
 app = Flask(__name__)
-#d={2:"Mumbai",1:"Jaipur",3:"Varanasi"}
-url="http://varanasikshetra.com"
+
+url="https://en.wikipedia.org/wiki/Main_Page"
+# url="https://www.youtube.com"
+# url="https://www.facebbok.com"
+
+# url="http://varanasikshetra.com"
 data=dd.downloadUrl(url)
 divs=an.GetDivs(data)
 pics=an.GetImages(data,url)
@@ -31,4 +36,4 @@ getsaveFullplot=tk.getsaveFullplot(data,trainingset)
 def index():
     return render_template('display.html',pictures=pics,divs=divs,headings=headings,paragraphs=paragraphs,sentences=sentences,words=words,frequency=frequency,plot=plot,stopwords=stopwords,removestopwords=removestopwords,frerstopword=frerstopword,rswplot=rswplot,getset=getset,trainingset=trainingset,intersectionset=intersectionset,freinterset=freinterset,interfreGraph=interfreGraph,getFullData=getFullData,getsaveFullplot=getsaveFullplot)
 if __name__ == "__main__":
- app.run(host="localhost", port=int("778"))
+ app.run(host="localhost", port=int("777"))
