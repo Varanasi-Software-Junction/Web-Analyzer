@@ -69,7 +69,3 @@ def crawl(url, max_urls=50):
             break
         crawl(link, max_urls=max_urls)
 
-d1,d2,d3=get_all_website_links("http://varanasikshetra.com")
-#print(d1)
-#print(d2)
-#print(d3)
